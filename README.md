@@ -1,5 +1,5 @@
 # code_SWD_HTE
-This repository includes multiple R files that contain the functions and implementation code for all the simulation results presented in the paper [Li F, Chen X, Tian Z, ?. Under Review.]. Their descriptions are as follows. For questions or comments about the code, please contact Zizhong Tian at <zqt5121@psu.edu>.
+This repository includes multiple R files that contain the functions and implementation code for all the simulation results presented in the paper [Li F, Chen X, Tian Z, Wang R, Heagerty PJ, Design Considerations for Treatment Effect Modification Analysis of Stepped Wedge Cluster Randomized Trials. Under Review.]. Their descriptions are as follows. For questions or comments about the code, please contact Zizhong Tian at <zqt5121@psu.edu>.
 
 I. Supporting Files: These supporting files are sourced in the corresponding main files that reproduce the simulation tables in the main manuscript as well as the supplementary web appendix.
 
@@ -9,12 +9,12 @@ I. Supporting Files: These supporting files are sourced in the corresponding mai
 
 II. Main Files: These main files are used to reproduce the simulation results in the main manuscript as well as the web appendix.
 
-4) sim_CS_HTE.R = reproduce the simulation table for testing HTE under cross-sectional design (Table 1);
-5) sim_CC_HTE.R = reproduce the simulation table for testing HTE under closed-cohort design (Web Table ?);
-6) sim_CS_ATE.R = reproduce the simulation table for testing ATE under cross-sectional design (Table 2);
-7) sim_CC_ATE.R = reproduce the simulation table for testing ATE under closed-cohort design (Web Table ?);
-8) sim_CS_ATE_unadj.R = reproduce the comparison simulation table for testing adjusted and unadjusted ATE under cross-sectional design (Web Table ?);
-9) sim_CC_ATE_unadj.R = reproduce the comparison simulation table for testing adjusted and unadjusted ATE under closed-cohort design (Web Table ?).
+4) sim_CS_HTE.R = reproduce the simulation table for testing HTE under cross-sectional design (Table 1, Web Table 1);
+5) sim_CC_HTE.R = reproduce the simulation table for testing HTE under closed-cohort design (Web Table 3);
+6) sim_CS_ATE.R = reproduce the simulation table for testing ATE under cross-sectional design (Table 2, Web Table 2);
+7) sim_CC_ATE.R = reproduce the simulation table for testing ATE under closed-cohort design (Web Table 4);
+8) sim_CS_ATE_unadj.R = reproduce the comparison simulation table for testing adjusted and unadjusted ATE under cross-sectional design (Web Table 5-8);
+9) sim_CC_ATE_unadj.R = reproduce the comparison simulation table for testing adjusted and unadjusted ATE under closed-cohort design (Web Table 9, 10).
 
 III. Software 
 
