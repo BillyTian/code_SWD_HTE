@@ -143,7 +143,7 @@ calc_CS_ATE <- function(N, J, sigma2y=1, sigma2x=1, eff, alpha0, alpha1, rho0, r
   # Var: analytical variance for ATE
   # power: actual predicted power
   
-  nca <- 0
+  nca <- 1
   power <- 0
   while (power < 1-beta){
     nca <- nca + 1
@@ -170,7 +170,7 @@ calc_CS_ATE <- function(N, J, sigma2y=1, sigma2x=1, eff, alpha0, alpha1, rho0, r
     Var <- sigma2y/N * (I*J*lambda2*lambda3)/
       ( (U^2+I*J*U-J*W-I*V)*lambda3-(U^2-I*V)*lambda2 )
     
-    power <- pnorm( sqrt(eff^2/Var)-qnorm(1-alpha/2) )
+    power <- pt(qt(1-alpha/2, I-2), I-2, ncp=eff/sqrt(Var), lower.tail = F)
   }
   return(c(nca, I, power, Var))
 }
@@ -197,7 +197,7 @@ calc_CC_ATE <- function(N, J, sigma2y=1, sigma2x=1, eff, alpha0, alpha1, alpha2,
   # Var: analytical variance for ATE
   # power: actual predicted power  
   
-  nca <- 0
+  nca <- 1
   power <- 0
   while (power < 1-beta){
     nca <- nca + 1
@@ -223,7 +223,7 @@ calc_CC_ATE <- function(N, J, sigma2y=1, sigma2x=1, eff, alpha0, alpha1, alpha2,
     
     Var <- sigma2y/N * (I*J*lambda3*lambda4)/( (U^2+I*J*U-J*W-I*V)*lambda4-(U^2-I*V)*lambda3 )
     
-    power <- pnorm( sqrt(eff^2/Var)-qnorm(1-alpha/2) )
+    power <- pt(qt(1-alpha/2, I-2), I-2, ncp=eff/sqrt(Var), lower.tail = F)
 
   }
   return(c(nca, I, power, Var))

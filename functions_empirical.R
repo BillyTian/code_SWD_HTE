@@ -126,7 +126,7 @@ empirical_CS_ATE <- function(nullcase=F, parameter, nsims=5000){
     R <- c(rep(0,J), 1, rep(0,J+1))
     beta <- fit$coef$fixed
     test.stat <- as.numeric((t(R)%*%beta)^2/(t(R)%*%vcov(fit)%*%R))
-    pvalue[i] <- 1-pchisq(test.stat, 1)
+    pvalue[i] <- 1-pf(test.stat, 1, I-2)
   }
   empirical <- mean(pvalue<0.05, na.rm=T)
   error.rate <- 1-sum(count, na.rm=T)/nsims
@@ -170,7 +170,7 @@ empirical_CC_ATE <- function(nullcase=F, parameter, nsims=5000){
     R <- c(rep(0,J),1,rep(0,J+1))
     beta <- fixef(fit)
     test.stat <- as.numeric((t(R)%*%beta)^2/(t(R)%*%vcov(fit)%*%R))
-    pvalue[i] <- 1-pchisq(test.stat, 1)
+    pvalue[i] <- 1-pf(test.stat, 1, I-2)
   }
   empirical <- mean(pvalue<0.05, na.rm=T)
   error.rate <- 1-sum(count, na.rm=T)/nsims
@@ -214,7 +214,7 @@ empirical_CS_ATE_unadj <- function(nullcase=F, parameter, nsims=5000){
     R <- c(rep(0,J), 1)
     beta <- fit$coef$fixed
     test.stat <- as.numeric((t(R)%*%beta)^2/(t(R)%*%vcov(fit)%*%R))
-    pvalue[i] <- 1-pchisq(test.stat, 1)
+    pvalue[i] <- 1-pf(test.stat, 1, I-2)
   }
   empirical <- mean(pvalue<0.05, na.rm=T)
   error.rate <- 1-sum(count, na.rm=T)/nsims
@@ -258,7 +258,7 @@ empirical_CC_ATE_unadj <- function(nullcase=F, parameter, nsims=5000){
     R <- c(rep(0,J),1)
     beta <- fixef(fit)
     test.stat <- as.numeric((t(R)%*%beta)^2/(t(R)%*%vcov(fit)%*%R))
-    pvalue[i] <- 1-pchisq(test.stat, 1)
+    pvalue[i] <- 1-pf(test.stat, 1, I-2)
   }
   empirical <- mean(pvalue<0.05, na.rm=T)
   error.rate <- 1-sum(count, na.rm=T)/nsims
